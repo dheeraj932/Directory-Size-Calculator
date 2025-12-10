@@ -298,7 +298,6 @@ root/ (25,088 bytes total)
 - All data is stored in memory (resets on restart)
 - The file system supports unlimited depth (tested with 3+ levels)
 - File sizes are in bytes, with KB and MB conversions provided
-- CORS is enabled for all origins (can be restricted in production)
 
 ## Quick Reference
 
