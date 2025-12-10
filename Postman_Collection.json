@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "filesystem-calculator-collection",
+		"name": "File System Calculator API",
+		"description": "Collection for testing Directory Size Calculator Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Current Path (pwd)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/pwd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"pwd"
+					]
+				}
+			}
+		},
+		{
+			"name": "List Directory (ls)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/ls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"ls"
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Directory Size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/size",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"size"
+					]
+				}
+			}
+		},
+		{
+			"name": "Change Directory - Relative Path",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"path\": \"documents\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"cd"
+					]
+				}
+			}
+		},
+		{
+			"name": "Change Directory - Absolute Path",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"path\": \"/documents/work\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"cd"
+					]
+				}
+			}
+		},
+		{
+			"name": "Change Directory - Root",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"path\": \"/\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"cd"
+					]
+				}
+			}
+		},
+		{
+			"name": "Create Directory (mkdir)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-directory\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/mkdir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"mkdir"
+					]
+				}
+			}
+		},
+		{
+			"name": "Remove Directory (rmdir)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/rmdir?name=test-directory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"rmdir"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test-directory"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Directory Tree - Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/tree",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"tree"
+					]
+				}
+			}
+		},
+		{
+			"name": "Get Directory Tree - Specific Path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/tree?path=/documents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"tree"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/documents"
+						}
+					]
+				}
+			}
+		},
+		{
+			"name": "Error - Directory Not Found",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"path\": \"nonexistent\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"cd"
+					]
+				}
+			}
+		},
+		{
+			"name": "Error - Create Duplicate Directory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"documents\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/filesystem/mkdir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"filesystem",
+						"mkdir"
+					]
+				}
+			}
+		}
+	]
+}
+
