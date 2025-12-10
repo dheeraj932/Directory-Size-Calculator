@@ -66,8 +66,8 @@ src/
 
 ### Prerequisites
 
-- Java 17 or higher
-- Gradle 8.5 or higher
+- Java 17
+- Gradle 8.5
 
 ### Installation
 
