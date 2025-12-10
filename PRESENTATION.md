@@ -281,16 +281,16 @@ root/ (25,088 bytes total)
 
 ## Verification Checklist
 
-- [x] Application builds successfully
-- [x] Application starts without errors
-- [x] All API endpoints respond correctly
-- [x] Recursive size calculation works
-- [x] 3-level directory structure is initialized
-- [x] Exception handling works properly
-- [x] JUnit tests pass
-- [x] Postman collection works
-- [x] Tree endpoint shows complete structure
-- [x] All CRUD operations work (create, read, update, delete)
+- Application builds successfully
+- Application starts without errors
+- All API endpoints respond correctly
+- Recursive size calculation works
+- 3-level directory structure is initialized
+- Exception handling works properly
+- JUnit tests pass
+- Postman collection works
+- Tree endpoint shows complete structure
+- All CRUD operations work (create, read, update, delete)
 
 ## Additional Notes
 
@@ -298,7 +298,6 @@ root/ (25,088 bytes total)
 - All data is stored in memory (resets on restart)
 - The file system supports unlimited depth (tested with 3+ levels)
 - File sizes are in bytes, with KB and MB conversions provided
-- CORS is enabled for all origins (can be restricted in production)
 
 ## Quick Reference
 
